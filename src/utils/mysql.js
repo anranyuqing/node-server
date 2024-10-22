@@ -5,7 +5,7 @@ const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '131908w',
-    database: 'admin',
+    database: 'auth',
 })
 
 export default connection
