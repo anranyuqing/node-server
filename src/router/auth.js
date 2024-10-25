@@ -1,8 +1,8 @@
 import { creatInterface } from './base.js'
 import connection from '../utils/mysql.js'
 import { createToken } from '../utils/jsonwebtoken.js'
-
-const PREFIX_URL = 'auth'
+import qrcode from 'qrcode'
+const PREFIX_URL = '/auth'
 
 creatInterface('post', 'login', PREFIX_URL, (req, res) => {
     const { account, password } = req.body
@@ -46,5 +46,11 @@ creatInterface('post', 'permissionInfo', PREFIX_URL, (req, res) => {
         console.log('result', result)
     })
 })
+
+creatInterface('get', 'qrcode', PREFIX_URL, async (req, res) => {
+    const code = await qrcode.toDataURL(`http://172.18.10.122:8888/static/index.html`)
+    res.json({ code })
+})
+
 
 export default {}

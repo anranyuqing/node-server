@@ -13,7 +13,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "jsonwebtoken": "^9.0.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
     "express": "^4.21.1"
